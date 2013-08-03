@@ -23,6 +23,13 @@
   "dependencies" : {
     "websocket": ">=1.0.8"
   },
+  
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "chai": "*"
+  },
+
   "engines": {
     "node": ">=0.6"
   }

@@ -1,4 +1,6 @@
 Chat = require './chat.coffee'
 
-chat = new Chat()
+port = 1337
+
+chat = new Chat port
 do chat.start

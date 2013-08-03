@@ -6,18 +6,22 @@ Message = require './message.coffee'
 Participants = require './participants.coffee'
 
 class Chat
-	constructor: ->
+	constructor: (port) ->
+		@port = port
+		console.log @port
 		@history = new History()
 		@participants = new Participants()
 
 	start: ->
+		console.log @port
+
 		@http_server = http.createServer (request, response) ->
 			console.log "#{(new Date())} Received request for #{request.url}"
 			response.writeHead 404
 			do response.end
 
-		@http_server.listen 1337, ->
-			console.log "#{(new Date())} HTTP server is listening on port 8080"
+		@http_server.listen @port, =>
+			console.log "#{(new Date())} HTTP server is listening on port #{@port}"
 
 		@websocket_server = new WebSocketServer
 			httpServer: @http_server

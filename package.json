@@ -1,0 +1,29 @@
+{
+  "name": "simple-chat-nodejs-websocket",
+  "version": "0.0.1",
+  "description": "Simple example of using Websockets with node.js and CoffeeScript",
+  "main": ".\\server\\service.coffee",
+  "scripts": {
+    "start": "coffee .\\server\\service.coffee",
+    "test": "mocha --compilers coffee:coffee-script -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forcewake/simple-chat-nodejs-websocket.git"
+  },
+  "keywords": [
+    "chat",
+    "websocket"
+  ],
+  "author": "Pavel Nosovich <forcewake@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forcewake/simple-chat-nodejs-websocket/issues"
+  },
+  "dependencies" : {
+    "websocket": ">=1.0.8"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
+}

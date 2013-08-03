@@ -8,13 +8,10 @@ Participants = require './participants.coffee'
 class Chat
 	constructor: (port) ->
 		@port = port
-		console.log @port
 		@history = new History()
 		@participants = new Participants()
 
 	start: ->
-		console.log @port
-
 		@http_server = http.createServer (request, response) ->
 			console.log "#{(new Date())} Received request for #{request.url}"
 			response.writeHead 404

@@ -1,6 +1,9 @@
 simple-chat-nodejs-websocket
 ============================
 
+## Build status
+[![Build Status](https://travis-ci.org/forcewake/simple-chat-nodejs-websocket.png?branch=master)](https://travis-ci.org/forcewake/simple-chat-nodejs-websocket)
+
 Simple example of using Websockets with node.js and CoffeeScript
 
 ## Installing and running

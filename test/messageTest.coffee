@@ -1,7 +1,7 @@
 Chai = require 'chai'
 Chai.should()
 
-Message = require '../server/message.coffee'
+Message = require '../src/server/message.coffee'
 
 describe 'Message', ->
 	message = null

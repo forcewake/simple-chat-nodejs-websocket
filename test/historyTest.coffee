@@ -1,7 +1,7 @@
 Chai = require 'chai'
 Chai.should()
 
-History = require '../server/history.coffee'
+History = require '../src/server/history.coffee'
 
 describe 'History', ->
 	history = null

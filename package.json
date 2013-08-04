@@ -2,10 +2,10 @@
   "name": "simple-chat-nodejs-websocket",
   "version": "0.0.1",
   "description": "Simple example of using Websockets with node.js and CoffeeScript",
-  "main": ".\\server\\service.coffee",
+  "main": "./src/server/service.coffee",
   "scripts": {
-    "start": "coffee .\\server\\service.coffee",
-    "test": "mocha --compilers coffee:coffee-script -R spec"
+    "start": "coffee ./src/server/service.coffee",
+    "test": "cake test"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   },
   "dependencies" : {
     "websocket": ">=1.0.8",
-    "coffee-script": "*"
+    "coffee-script": "*",
+    "http": "*"
   },
   
   "devDependencies": {

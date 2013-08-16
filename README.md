@@ -20,3 +20,8 @@ Simple example of using Websockets with node.js and CoffeeScript
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Usage
+
+1. Run ./src/client/index.html with Firefox or ...
+	- Disable same origin policy in chrome via ```chrome.exe --disable-web-security``` in cmd because Chrome is =|

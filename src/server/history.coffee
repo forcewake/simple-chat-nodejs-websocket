@@ -1,5 +1,5 @@
 class History
-	constructor: ->
+	constructor: () ->
 		@messages = []
 
 	add_message: (message) ->

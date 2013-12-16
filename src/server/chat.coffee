@@ -1,14 +1,17 @@
 http = require 'http'
 WebSocketServer = require('websocket').server
-History = require './history.coffee'
-Participant = require './participant.coffee'
-Message = require './message.coffee'
-Participants = require './participants.coffee'
+History = require './history'
+Participant = require './participant'
+Message = require './message'
+Participants = require './participants'
+TagProcessor = require './tag-processor'
 
 class Chat
 	constructor: ->
 		@history = new History()
+		@tagProcessor = new TagProcessor()
 		@participants = new Participants()
+
 
 	createServer: ->
 		@http_server = http.createServer (request, response) ->
@@ -44,12 +47,13 @@ class Chat
 					data: messages
 			connection.on 'message', (message) =>
 				if message.type is 'utf8'
+                    escapedMessage = @tagProcessor.escapeHtml message.utf8Data
 					if userName is false
-						userName = message.utf8Data
+						userName = escapedMessage
 						console.log "#{(new Date())} User is known as: #{userName}"
 					else
 						console.log "#{(new Date())} Received Message from #{userName}: #{message.utf8Data}"
-						one_message = new Message message.utf8Data, (new Date()), userName
+						one_message = new Message escapedMessage, (new Date()), userName
 
 						@history.add_message one_message
 						messages = @history.get_messages
